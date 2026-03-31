@@ -1,0 +1,31 @@
+\DoubleColumnHeader
+\vspace{0.55em}
+
+\noindent
+\begin{minipage}[t]{0.31\textwidth}
+    \vspace{0pt}
+    \small
+    \DoubleSidebarSection{\LabelProfile}
+    \DoubleProfileText{\CVSidebarProfileText}
+
+    \DoubleSidebarSection{\LabelCoreStack}
+    \input{content/lang/\CVLanguage/skill-groups.tex}
+
+    \DoubleSidebarSection{\LabelLanguagesSidebar}
+    \input{content/lang/\CVLanguage/languages.tex}
+
+    \DoubleSidebarSection{\LabelHighlights}
+    \input{content/lang/\CVLanguage/highlights.tex}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.65\textwidth}
+    \vspace{0pt}
+    \DoubleSection{\LabelWorkExperience}
+    \input{content/lang/\CVLanguage/experience.tex}
+
+    \DoubleSection{\LabelEducation}
+    \input{content/lang/\CVLanguage/education.tex}
+
+    \DoubleSection{\LabelProjectsCompact}
+    \input{content/lang/\CVLanguage/projects.tex}
+\end{minipage}

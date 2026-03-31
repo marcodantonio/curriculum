@@ -1,0 +1,91 @@
+\newcommand{\SingleSep}{\space|\space}
+\newcommand{\SingleHeaderLink}[2]{\href{#1}{\underline{#2}}}
+
+\newcommand{\SingleColumnHeader}{%
+  \noindent
+  \begin{tabular*}{\textwidth}{@{}p{0.17\textwidth}@{\extracolsep{\fill}}p{0.66\textwidth}p{0.17\textwidth}@{}}
+    &
+    \centering
+    {\CVSans\bfseries\fontsize{24}{26}\selectfont\MakeUppercase{\CVName}\par}
+    \vspace{0.18em}
+    {\small
+      \CVLocationLocal\SingleSep
+      \SingleHeaderLink{\CVPhoneURL}{\CVPhoneCompact}\SingleSep
+      \SingleHeaderLink{\CVEmailURL}{\CVEmail}\SingleSep
+      \SingleHeaderLink{\CVGithubURL}{\CVGithubShort}\SingleSep
+      \SingleHeaderLink{\CVLinkedInURL}{\CVLinkedInShort}\SingleSep
+      \SingleHeaderLink{\CVWebsiteURL}{\CVWebsiteShort}\par}
+    &
+    \raggedleft
+    \IfFileExists{\CVQrImage}{\includegraphics[width=2.1cm]{\CVQrImage}}{}
+  \end{tabular*}\par
+  \vspace{0.18em}
+  {\centering\small \CVTopSummary\par}
+  \vspace{0.30em}
+}
+
+\newcommand{\SingleSection}[1]{%
+  \vspace{0.48em}%
+  {\CVSans\bfseries\fontsize{10.9}{11.1}\selectfont\MakeUppercase{#1}\par}%
+  \vspace{0.08em}%
+  {\color{CVLine}\hrule height 0.6pt}%
+  \vspace{0.16em}%
+}
+
+\newcommand{\SingleEntryHeading}[3]{%
+  \begin{tabular*}{\textwidth}{@{}p{0.74\linewidth}@{\extracolsep{\fill}}>{\raggedleft\arraybackslash}p{0.24\linewidth}@{}}
+    {\CVSans\bfseries\MakeUppercase{#1} -- #2} & {\CVSans\fontsize{9.5}{9.8}\selectfont #3}
+  \end{tabular*}\par
+}
+
+\newcommand{\SingleProjectHeading}[3]{%
+  \begin{tabular*}{\textwidth}{@{}p{0.67\linewidth}@{\extracolsep{\fill}}>{\raggedleft\arraybackslash}p{0.30\linewidth}@{}}
+    {\CVSans\bfseries\MakeUppercase{#1}} & {\CVSans\fontsize{9.4}{9.6}\selectfont (#2)}
+  \end{tabular*}\par
+}
+
+\newcommand{\SingleStackLine}[1]{%
+  {\small \LabelStackUsed: #1\par}
+}
+
+\newcommand{\SkillGroup}[2]{% intentionally unused in this theme
+}
+
+\newcommand{\LanguageItem}[2]{% intentionally unused in this theme
+}
+
+\newcommand{\HighlightItem}[2]{% intentionally unused in this theme
+}
+
+\newcommand{\ExperienceItem}[6]{%
+  \SingleEntryHeading{#1}{#2}{#3}
+  {\small #4\par}
+  \SingleStackLine{#5}
+  \vspace{0.42em}
+}
+
+\newcommand{\EducationItem}[4]{%
+  \SingleEntryHeading{#1}{#2}{#3}
+  {\small #4\par}
+  \vspace{0.42em}
+}
+
+\newcommand{\ProjectItem}[4]{%
+  \SingleProjectHeading{#1}{#2}{#2}
+  {\small #3\par}
+  \vspace{0.42em}
+}
+
+\newcommand{\ActivityItem}[3]{%
+  {\CVSans\bfseries\MakeUppercase{#1}\par}
+  {\small #2\par}
+  \vspace{0.42em}
+}
+
+\newcommand{\InfoLine}[2]{%
+  {\small\textbf{\MakeUppercase{#1}:} #2\par}
+}
+
+\newcommand{\LegalNote}[1]{%
+  {\small #1\par}
+}
