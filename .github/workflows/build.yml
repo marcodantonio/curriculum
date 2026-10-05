@@ -11,6 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check preview synchronization and clean safety
+        run: |
+          python3 -m unittest discover -s tests -v
+          bash -n scripts/build.sh
+
       - name: Install TeX Live
         run: |
           sudo apt-get update

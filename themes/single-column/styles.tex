@@ -1,16 +1,19 @@
-\geometry{a4paper,top=0.82cm,bottom=0.90cm,left=0.95cm,right=0.95cm}
-\setmainfont{Liberation Serif}
-\newfontfamily\CVSans{Liberation Sans}
+\geometry{a4paper,top=1.35cm,bottom=1.65cm,left=1.45cm,right=1.45cm,footskip=20pt}
+% TeX Gyre fonts ship with TeX Live/MacTeX, keeping local and CI output stable.
+\setmainfont{texgyreheros}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic,Ligatures=TeX]
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\setstretch{1.0}
+\setstretch{1}
 \emergencystretch=2.3em
 \sloppy
-\AtBeginDocument{\fontsize{9.15pt}{10.1pt}\selectfont}
+\AtBeginDocument{\fontsize{9.8}{11.7}\selectfont\RaggedRight}
 
-\definecolor{CVText}{HTML}{111111}
-\definecolor{CVLine}{HTML}{444444}
-\definecolor{CVSecondary}{HTML}{222222}
+% Monochrome: hierarchy relies on font weight and size, never color.
+\definecolor{CVText}{HTML}{000000}
+\definecolor{CVLine}{HTML}{000000}
+\definecolor{CVMuted}{HTML}{000000}
+\definecolor{CVSecondary}{HTML}{000000}
+\color{CVText}
 
 \hypersetup{
   colorlinks=false,
@@ -21,8 +24,11 @@
 
 \setlist[itemize]{
   leftmargin=1.0em,
-  itemsep=0.06em,
-  topsep=0.1em,
+  itemsep=1pt,
+  topsep=2pt,
   parsep=0pt,
   partopsep=0pt
 }
+% Fail compilation if this one-page CV spills onto a second page.
+\newcount\CVPageCount
+\AddToHook{shipout/before}{\global\advance\CVPageCount by 1\relax\ifnum\CVPageCount>1\PackageError{CV}{The CV exceeds one page}{Adjust spacing or content while preserving readability.}\fi}

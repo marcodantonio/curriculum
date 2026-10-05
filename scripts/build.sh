@@ -8,13 +8,14 @@ LANG_DIR="$ROOT_DIR/content/lang"
 THEME_DIR="$ROOT_DIR/themes"
 
 mkdir -p "$BUILD_ROOT" "$DIST_ROOT"
+cd "$ROOT_DIR"
 
 available_langs() {
-  find "$LANG_DIR" -mindepth 1 -maxdepth 1 -type d ! -name '_template' -printf '%f\n' | sort
+  find "$LANG_DIR" -mindepth 1 -maxdepth 1 -type d ! -name '_template' -exec basename {} \; | sort
 }
 
 available_themes() {
-  find "$THEME_DIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
+  find "$THEME_DIR" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort
 }
 
 build_combo() {
@@ -37,6 +38,8 @@ build_combo() {
     fi
   done
 
+  local preview
+  preview="$(python3 "$ROOT_DIR/scripts/sync-preview.py" "$lang" --theme "$theme")"
   mkdir -p "$combo_dir" "$DIST_ROOT/$theme"
 
   cat > "$wrapper" <<WRAP
@@ -47,11 +50,27 @@ WRAP
 
   wrapper_base="$(basename "$wrapper" .tex)"
 
-  latexmk -lualatex -interaction=nonstopmode -halt-on-error \
-    -outdir="$combo_dir" "$wrapper" \
-    >"/tmp/cv-$theme-$lang.log" 2>&1 || { cat "/tmp/cv-$theme-$lang.log"; return 1; }
-
-  cp "$combo_dir/${wrapper_base}.pdf" "$DIST_ROOT/$theme/$dist_name"
+  if command -v latexmk >/dev/null 2>&1; then
+    latexmk -lualatex -interaction=nonstopmode -halt-on-error \
+      -outdir="$combo_dir" "$wrapper" \
+      >"$combo_dir/build.log" 2>&1 || { cat "$combo_dir/build.log"; return 1; }
+    cp "$combo_dir/${wrapper_base}.pdf" "$DIST_ROOT/$theme/$dist_name"
+  else
+    local tectonic_bin="${CV_TECTONIC_BIN:-}"
+    if [[ -z "$tectonic_bin" ]] && command -v tectonic >/dev/null 2>&1; then
+      tectonic_bin="$(command -v tectonic)"
+    fi
+    if [[ -z "$tectonic_bin" && -x "/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic" ]]; then
+      tectonic_bin="/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic"
+    fi
+    if [[ -z "$tectonic_bin" || ! -x "$tectonic_bin" ]]; then
+      echo "No compiler found. Use latexmk/LuaLaTeX or set CV_TECTONIC_BIN to an existing Tectonic executable." >&2
+      return 1
+    fi
+    "$tectonic_bin" --outdir "$combo_dir" --keep-logs "$preview" \
+      >"$combo_dir/build.log" 2>&1 || { cat "$combo_dir/build.log"; return 1; }
+    cp "$combo_dir/$dist_name" "$DIST_ROOT/$theme/$dist_name"
+  fi
 }
 
 build_theme() {
@@ -75,7 +94,20 @@ build_all() {
 }
 
 clean_all() {
-  rm -rf "$BUILD_ROOT"/* "$DIST_ROOT"/*
+  # Import pending editor edits first. Keep editable previews and their sync state.
+  for preview in "$BUILD_ROOT"/review-*/cv-*.tex; do
+    [[ -f "$preview" ]] || continue
+    local preview_theme="$(basename "$(dirname "$preview")")"
+    local preview_lang="$(basename "$preview" .tex)"
+    case "$preview_lang" in cv-it|cv-en) ;; *) continue ;; esac
+    python3 "$ROOT_DIR/scripts/sync-preview.py" "${preview_lang#cv-}" --theme "${preview_theme#review-}" >/dev/null
+  done
+  for generated in "$BUILD_ROOT"/*; do
+    [[ -e "$generated" ]] || continue
+    case "$(basename "$generated")" in review-*) continue ;; esac
+    rm -rf -- "$generated"
+  done
+  rm -rf "$DIST_ROOT"/*
 }
 
 case "${1:-all}" in

@@ -1,4 +1,5 @@
 build/
+tmp/
 *.aux
 *.fdb_latexmk
 *.fls
@@ -6,3 +7,4 @@ build/
 *.out
 *.toc
 *.xdv
+__pycache__/

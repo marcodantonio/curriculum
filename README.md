@@ -4,6 +4,12 @@ This repository contains my CV written in LaTeX.
 
 The project is structured to keep content, layout and build logic separated, making it easy to maintain different layouts and languages over time.
 
+The single-column CV uses TeX Gyre Heros throughout, black text, a consistent
+hierarchy of font weights and sizes, and a legal notice in the page footer.
+It enforces a one-page limit during compilation. The double-column theme remains
+available with its existing visual design. Content stays in `content/lang/`,
+layout in `themes/`, and the QR is a vector trace of the existing PNG.
+
 ## Available
 
 Themes:
@@ -19,6 +25,14 @@ Languages:
 Requirements:
 - latexmk
 - lualatex (TeX Live / MacTeX / BasicTeX)
+- Python 3.9+ for standalone preview synchronization
+
+If `latexmk` is unavailable, the script uses an existing Tectonic executable
+(`tectonic` on PATH, `CV_TECTONIC_BIN`, or the copy bundled with ChatGPT on macOS).
+Nothing is installed by the build script. Both compiler paths use the same
+modular content and theme; the Tectonic path compiles their standalone expansion.
+
+The build script is also compatible with macOS' BSD `find` implementation.
 
 Examples:
 
@@ -112,3 +126,43 @@ Build example:
 - double-column is more compact and works well for a one-page CV
 - single-column follows more closely the original Word layout (including the QR code)
 - outputs are grouped by theme to keep builds organized
+
+## Editable desktop preview
+
+The existing editor source is `build/review-single-column/cv-it.tex`.
+Refresh/synchronize it with:
+
+```bash
+python3 scripts/sync-preview.py it
+```
+
+Each source block is delimited by `CV-BEGIN` / `CV-END` comments. Edit inside
+those blocks, keeping the markers intact. Synchronization imports editor changes
+into the owning modular files, then refreshes the preview. If the same source was
+also edited outside the preview, it fails without overwriting either version.
+Edits to modular sources refresh an unchanged preview normally. Build commands
+synchronize their previews automatically; editing alone does not update Git's
+modular sources until synchronization runs.
+
+`--initialize` is only for first reconciliation, after the existing preview has
+been incorporated into the modular sources. It keeps a `.pre-sync.tex` backup.
+Do not use it to bypass a conflict.
+
+`make clean` imports pending preview edits before removing generated build and
+`dist` files. It preserves `build/review-*` documents, backups and sync state.
+The preview is still ignored by Git; the synchronized modular sources are the
+versioned source of truth. Single-column PDFs are published in `dist/single-column/`;
+`output/pdf/cv-it.pdf` is an optional convenience copy and must be refreshed after
+a new build.
+
+## Local verification
+
+```bash
+python3 -m unittest discover -s tests -v
+bash -n scripts/build.sh
+git diff --check
+./scripts/build.sh single-column all
+```
+
+Tests cover exact round trips, source/editor updates, conflict preservation,
+malformed markers, and clean safety in an isolated temporary repository.

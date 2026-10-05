@@ -1,50 +1,50 @@
 \newcommand{\CVContactSep}{\hspace{0.42em}{\color{CVLight}\textbullet}\hspace{0.42em}}
 
 \newcommand{\DoubleColumnHeader}{%
-  {\fontsize{25}{27}\selectfont\bfseries \CVName\par}
-  \vspace{0.12em}
-  {\large\color{CVAccent}\CVHeadline\par}
-  \vspace{0.34em}
-  {\small
+  {\fontsize{26}{28}\selectfont\bfseries \CVName\par}
+  \vspace{0.14em}
+  {\fontsize{11.5}{13}\selectfont\color{CVAccent}\CVHeadline\par}
+  \vspace{0.38em}
+  {\fontsize{9.25}{10.5}\selectfont
   \CVLocationIntl\CVContactSep
   \href{\CVPhoneURL}{\CVPhone}\CVContactSep
   \href{\CVEmailURL}{\CVEmail}\par}
-  {\small
+  {\fontsize{9.25}{10.5}\selectfont
   \href{\CVGithubURL}{\CVGithubLabel}\CVContactSep
   \href{\CVLinkedInURL}{\CVLinkedInLabel}\CVContactSep
   \href{\CVWebsiteURL}{\CVWebsiteLabel}\par}
 }
 
 \newcommand{\DoubleSection}[1]{%
-  \vspace{0.42em}%
-  {\color{CVAccent}\bfseries\large #1\par}%
-  \vspace{0.16em}%
-  {\color{CVRule}\hrule height 0.8pt}%
-  \vspace{0.42em}%
+  \vspace{0.52em}%
+  {\color{CVAccent}\bfseries\fontsize{12}{13}\selectfont #1\par}%
+  \vspace{0.14em}%
+  {\color{CVRule}\hrule height 0.55pt}%
+  \vspace{0.46em}%
 }
 
 \newcommand{\DoubleSidebarSection}[1]{%
-  \vspace{0.18em}%
-  {\color{CVAccent}\bfseries\normalsize #1\par}%
-  \vspace{0.14em}%
-  {\color{CVRule}\hrule height 0.8pt}%
-  \vspace{0.34em}%
+  \vspace{0.24em}%
+  {\color{CVAccent}\bfseries\fontsize{10.1}{11}\selectfont #1\par}%
+  \vspace{0.12em}%
+  {\color{CVRule}\hrule height 0.5pt}%
+  \vspace{0.38em}%
 }
 
 \newcommand{\DoubleProfileText}[1]{%
-  {\footnotesize\color{CVMuted}#1\par}
+  {\fontsize{8.65}{10.1}\selectfont\color{CVMuted}#1\par}
 }
 
 \newcommand{\SkillGroup}[2]{%
-  {\footnotesize\textbf{#1}}\\[-0.08em]
-  {\footnotesize\color{CVMuted}#2\par}
-  \vspace{0.28em}
+  {\fontsize{8.7}{10.1}\selectfont\textbf{#1}}\\[-0.08em]
+  {\fontsize{8.7}{10.1}\selectfont\color{CVMuted}#2\par}
+  \vspace{0.30em}
 }
 
 \newcommand{\LanguageItem}[2]{%
-  {\footnotesize\textbf{#1}}\\[-0.08em]
-  {\footnotesize\color{CVMuted}#2\par}
-  \vspace{0.34em}
+  {\fontsize{8.7}{10.1}\selectfont\textbf{#1}}\\[-0.08em]
+  {\fontsize{8.7}{10.1}\selectfont\color{CVMuted}#2\par}
+  \vspace{0.38em}
 }
 
 \newcommand{\HighlightItem}[2]{%
@@ -55,32 +55,32 @@
 
 \newcommand{\ExperienceItem}[6]{%
   \begin{tabular*}{\linewidth}{@{}p{0.70\linewidth}@{\extracolsep{\fill}}>{\raggedleft\arraybackslash}p{0.27\linewidth}@{}}
-    \textbf{#1} & {\footnotesize\color{CVMuted}#3} \\
-    \multicolumn{2}{@{}l@{}}{{\small\textit{#2}}}
+    {\fontsize{10.2}{11.3}\selectfont\textbf{#1}} & {\fontsize{8.8}{10}\selectfont\color{CVMuted}#3} \\
+    \multicolumn{2}{@{}l@{}}{{\fontsize{9.7}{11}\selectfont\textit{#2}}}
   \end{tabular*}\par
-  \vspace{0.12em}
+  \vspace{0.16em}
   \begin{itemize}
     #6
   \end{itemize}
-  {\footnotesize\color{CVMuted}#5\par}
-  \vspace{0.42em}
+  {\fontsize{8.7}{10.1}\selectfont\color{CVMuted}#5\par}
+  \vspace{0.52em}
 }
 
 \newcommand{\EducationItem}[4]{%
   \begin{tabular*}{\linewidth}{@{}p{0.70\linewidth}@{\extracolsep{\fill}}>{\raggedleft\arraybackslash}p{0.27\linewidth}@{}}
-    \textbf{#1} & {\footnotesize\color{CVMuted}#3} \\
-    \multicolumn{2}{@{}l@{}}{{\small\textit{#2}}}
+    {\fontsize{10.2}{11.3}\selectfont\textbf{#1}} & {\fontsize{8.8}{10}\selectfont\color{CVMuted}#3} \\
+    \multicolumn{2}{@{}l@{}}{{\fontsize{9.7}{11}\selectfont\textit{#2}}}
   \end{tabular*}\par
-  \vspace{0.16em}
-  {\small #4\par}
-  \vspace{0.26em}
+  \vspace{0.18em}
+  {\fontsize{9.25}{11}\selectfont #4\par}
+  \vspace{0.34em}
 }
 
 \newcommand{\ProjectItem}[4]{%
-  \textbf{#1}\\[-0.08em]
-  {\footnotesize\color{CVMuted}#2}\\[-0.05em]
-  {\footnotesize #4\par}
-  \vspace{0.34em}
+  {\fontsize{9.25}{10.5}\selectfont\textbf{#1}}\\[-0.08em]
+  {\fontsize{8.65}{10}\selectfont\color{CVMuted}#2}\\[-0.05em]
+  {\fontsize{8.8}{10.2}\selectfont #4\par}
+  \vspace{0.42em}
 }
 
 \newcommand{\ActivityItem}[3]{%
