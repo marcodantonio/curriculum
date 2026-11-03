@@ -65,7 +65,7 @@ Files are exported only after both language compilations succeed; a compiler
 failure preserves previous exported PDFs.
 
 ```text
-cover-letters/applications/company-slug/     # editable company dossier, ignored by Git
+cover-letters/applications/company-slug/     # editable public company dossier
    application.json                        # position brief and IT/EN letter copy
    research.md                             # optional sources and review notes
 build/cover-letters/company-slug/             # generated TeX, logs and intermediates
@@ -75,10 +75,9 @@ dist/cover-letters/company-slug/
 ```
 
 Edit the JSON, not generated `.tex` files: rebuilding replaces the latter. Existing
-CV editor previews are preserved. Company inputs and PDF exports are ignored by
-Git by default. Sizeless is explicitly approved for public versioning: only its
-application folder and IT/EN PDFs are exempted in `.gitignore`. Other applications
-remain local unless separately approved. `make clean` removes
+CV editor previews are preserved. All company inputs, job briefs, research notes
+and PDF exports are public and versioned in Git. There are no company-specific
+publication exceptions; new applications follow the same rule. `make clean` removes
 compiled outputs and cover-letter intermediates, preserving application JSON and
 CV editor previews. Do not use it when you still need exported PDFs.
 
@@ -90,10 +89,10 @@ python3 -m unittest discover -s tests -v
 ```
 
 The example is explicitly a layout demonstration, not an actual application.
-CI compiles the example, all CV variants and ready company applications that have
-been approved for versioning, including Sizeless, and uploads the PDFs as workflow
-artifacts. It does not receive ignored local applications. Examples follow the
-same company-folder structure.
+CI compiles the example, all CV variants and every ready company application,
+and uploads the PDFs as workflow artifacts. Draft application sources are also
+public but remain uncompiled until marked ready. Examples follow the same
+company-folder structure.
 
 Legacy flat `applications/company-slug.json` files are rejected explicitly rather
 than silently skipped. Move them into a company folder and complete the position

@@ -63,9 +63,9 @@ For every CV update, rebuild **all languages and both themes** with `make all`
 or `./scripts/build.sh all` before delivery or publication. Targeted commands
 are useful for diagnosis only. Review all four PDFs and publish the matching
 sources and `dist/` outputs together.
-`make all` also builds every ready local cover letter in IT/EN. Company application
-data and letter PDFs are ignored by default. Sizeless is explicitly approved for
-publication and versioned alongside the four CV PDFs.
+`make all` also builds every ready cover letter in IT/EN. All company application
+folders, job briefs, research notes and exported letter PDFs are public and
+versioned alongside the four CV PDFs. Only generated build intermediates are ignored.
 
 Generated PDFs are placed under:
 
