@@ -1,0 +1,45 @@
+{
+  "company": "Example company - layout preview",
+  "ready": true,
+  "languages": {
+    "it": {
+      "recipient": "Team Recruiting",
+      "salutation": "Gentile team di selezione,",
+      "motivation": "Questa lettera dimostrativa serve a verificare il layout. Nella candidatura reale, questo paragrafo spiega perché mi interessa la specifica azienda e collega un requisito dell’annuncio a una mia esperienza concreta.",
+      "paragraphs": [
+        "Nel mio lavoro in Netsons sviluppo servizi web e collego applicazioni e infrastruttura, collaborando con il reparto sistemi. Automatizzo i rilasci con CI/CD e Docker e utilizzo Codex e Claude Code, studiando capacità e limiti dei modelli per scegliere l'approccio adatto al problema.",
+        "Nei progetti personali sviluppo estensioni Python per Hermes, con agenti specializzati, memoria e automazione di attività. Integro voce e telefonia con LiveKit/SIP e strumenti tramite MCP, con controlli di autorizzazione e gestione persistente delle richieste. Gestisco inoltre un'infrastruttura self-hosted con virtualizzazione, storage ZFS e servizi integrati.",
+        "Affianco al lavoro la laurea magistrale in Ingegneria Informatica al Politecnico di Torino e la danza sportiva internazionale, con 17 titoli italiani. Questo percorso ha rafforzato la mia capacità di pianificare, collaborare e mantenere lucidità sotto pressione."
+      ],
+      "closing": "Mi farebbe piacere approfondire in un colloquio come queste esperienze possano contribuire al vostro team. Grazie per il tempo dedicato alla mia candidatura.",
+      "contribution": "In una lettera reale, questo paragrafo spiega quale contributo concreto posso portare al ruolo, collegandolo alle esperienze illustrate. È una dimostrazione del formato, non una candidatura inviata."
+    },
+    "en": {
+      "recipient": "Recruiting Team",
+      "salutation": "Dear Hiring Team,",
+      "motivation": "This demonstration letter is a layout preview. In a real application, this paragraph explains why I am interested in the company and connects a requirement from the job description to a concrete example from my experience.",
+      "paragraphs": [
+        "At Netsons, I develop web services and connect applications with infrastructure, working alongside the systems team. I automate releases with CI/CD and Docker and use Codex and Claude Code, studying model capabilities and limitations to choose an approach suited to each problem.",
+        "In my personal projects, I develop Python extensions for Hermes, including specialist agents, memory and task automation. I integrate voice and telephony with LiveKit/SIP and tools through MCP, with authorization controls and persistent request handling. I also manage self-hosted infrastructure with virtualization, ZFS storage and integrated services.",
+        "Alongside my work, I am pursuing a master's degree in Computer Engineering at Politecnico di Torino and competing internationally in dance, with 17 Italian titles. This experience has strengthened my ability to plan, collaborate and remain focused under pressure."
+      ],
+      "closing": "I would welcome the opportunity to discuss how these experiences could contribute to your team. Thank you for considering my application.",
+      "contribution": "In a real letter, this paragraph explains the concrete contribution I could make to the role, supported by the experiences above. This is a format demonstration, not a submitted application."
+    }
+  },
+  "position": {
+    "title": "Software Developer",
+    "url": "https://example.com/jobs/software-developer",
+    "location": "Example location - demonstration only",
+    "requirements": [
+      "Connect applications and infrastructure."
+    ],
+    "fit": [
+      {
+        "requirement": "Connect applications and infrastructure.",
+        "evidence": "Web services, CI/CD and Python integrations.",
+        "contribution": "Build integrations between application and delivery workflows."
+      }
+    ]
+  }
+}

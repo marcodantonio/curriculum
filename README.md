@@ -1,6 +1,10 @@
-# Marco D'Antonio – LaTeX CV
+# Marco D'Antonio – CV and cover letters
 
-This repository contains my CV written in LaTeX.
+This repository generates my LaTeX CV and bilingual company cover letters.
+Cover letters use one dedicated single-column layout; see
+[cover-letters/README.md](cover-letters/README.md) for the application workflow.
+Each company has its own application folder with the job brief, evidence of fit
+and tailored IT/EN copy. The advertised role drives the letter's title and opening.
 
 The project is structured to keep content, layout and build logic separated, making it easy to maintain different layouts and languages over time.
 
@@ -49,6 +53,7 @@ Examples:
 ```bash
 make all
 make list
+make cover-letters
 ./scripts/build.sh double-column all
 ./scripts/build.sh double-column en
 ./scripts/build.sh single-column it
@@ -58,6 +63,8 @@ For every CV update, rebuild **all languages and both themes** with `make all`
 or `./scripts/build.sh all` before delivery or publication. Targeted commands
 are useful for diagnosis only. Review all four PDFs and publish the matching
 sources and `dist/` outputs together.
+`make all` also builds every ready local cover letter in IT/EN. Company application
+data and letter PDFs are ignored by Git; the four CV PDFs remain versioned.
 
 Generated PDFs are placed under:
 
