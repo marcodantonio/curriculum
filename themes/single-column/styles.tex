@@ -2,11 +2,12 @@
 % TeX Gyre fonts ship with TeX Live/MacTeX, keeping local and CI output stable.
 \setmainfont{texgyreheros}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic,Ligatures=TeX]
 \setlength{\parindent}{0pt}
+\setlength{\JustifyingParindent}{0pt}
 \setlength{\parskip}{0pt}
 \setstretch{1}
 \emergencystretch=2.3em
 \sloppy
-\AtBeginDocument{\fontsize{9.8}{11.7}\selectfont\RaggedRight}
+\AtBeginDocument{\fontsize{9.8}{11.7}\selectfont\justifying}
 
 % Monochrome: hierarchy relies on font weight and size, never color.
 \definecolor{CVText}{HTML}{000000}

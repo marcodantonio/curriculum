@@ -1,4 +1,13 @@
 \newcommand{\CVName}{Marco D'Antonio}
+% Birth date: 20 October 2000. Re-evaluate age on each compilation.
+\newcommand{\CVBirthYear}{2000}
+\newcommand{\CVBirthMonth}{10}
+\newcommand{\CVBirthDay}{20}
+\newcommand{\CVAge}{%
+  \number\numexpr\year-\CVBirthYear
+  \ifnum\numexpr\month*100+\day\relax<\numexpr\CVBirthMonth*100+\CVBirthDay\relax
+    -1%
+  \fi\relax}
 \newcommand{\CVLocationLocal}{Pescara, PE}
 \newcommand{\CVLocationIntl}{Pescara, Italy}
 \newcommand{\CVPhone}{+39 333 888 0522}

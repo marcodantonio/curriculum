@@ -10,6 +10,16 @@ It enforces a one-page limit during compilation. The double-column theme remains
 available with its existing visual design. Content stays in `content/lang/`,
 layout in `themes/`, and the QR is a vector trace of the existing PNG.
 
+Single-column entries use a consistent hierarchy: bold primary title, role or
+technical scope on the following line, then the description. Dates stay aligned
+with the primary title. Italian and English content describe the same experience
+and projects; shared theme components apply to both languages.
+Body paragraphs are justified in both themes; dates and the QR retain their
+dedicated alignment.
+Both headlines use `\CVAge`, calculated from the birth date in
+`content/common/personal.tex` and the compiler's date. Rebuild the PDFs to update
+the displayed age; already exported PDFs remain unchanged.
+
 ## Available
 
 Themes:
@@ -43,6 +53,11 @@ make list
 ./scripts/build.sh double-column en
 ./scripts/build.sh single-column it
 ```
+
+For every CV update, rebuild **all languages and both themes** with `make all`
+or `./scripts/build.sh all` before delivery or publication. Targeted commands
+are useful for diagnosis only. Review all four PDFs and publish the matching
+sources and `dist/` outputs together.
 
 Generated PDFs are placed under:
 
@@ -163,7 +178,7 @@ in `output/`. Build intermediates, desktop previews, macOS metadata and any lega
 python3 -m unittest discover -s tests -v
 bash -n scripts/build.sh
 git diff --check
-./scripts/build.sh single-column all
+./scripts/build.sh all
 ```
 
 Tests cover exact round trips, source/editor updates, conflict preservation,
