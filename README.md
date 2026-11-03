@@ -151,9 +151,11 @@ Do not use it to bypass a conflict.
 `make clean` imports pending preview edits before removing generated build and
 `dist` files. It preserves `build/review-*` documents, backups and sync state.
 The preview is still ignored by Git; the synchronized modular sources are the
-versioned source of truth. Single-column PDFs are published in `dist/single-column/`;
-`output/pdf/cv-it.pdf` is an optional convenience copy and must be refreshed after
-a new build.
+versioned source of truth. The four published PDFs live only in
+`dist/single-column/` and `dist/double-column/` (IT/EN for each theme).
+Use those files for downloads and delivery; do not maintain additional PDF copies
+in `output/`. Build intermediates, desktop previews, macOS metadata and any legacy
+`output/` directory are ignored by Git. Keep unrelated artwork outside this repository.
 
 ## Local verification
 
