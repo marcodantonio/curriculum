@@ -76,7 +76,9 @@ dist/cover-letters/company-slug/
 
 Edit the JSON, not generated `.tex` files: rebuilding replaces the latter. Existing
 CV editor previews are preserved. Company inputs and PDF exports are ignored by
-Git to keep applications out of the public CV repository. `make clean` removes
+Git by default. Sizeless is explicitly approved for public versioning: only its
+application folder and IT/EN PDFs are exempted in `.gitignore`. Other applications
+remain local unless separately approved. `make clean` removes
 compiled outputs and cover-letter intermediates, preserving application JSON and
 CV editor previews. Do not use it when you still need exported PDFs.
 
@@ -88,9 +90,10 @@ python3 -m unittest discover -s tests -v
 ```
 
 The example is explicitly a layout demonstration, not an actual application.
-CI compiles the example in both languages along with all CV variants, and uploads
-those six demonstration/public PDFs as workflow artifacts. It does not receive
-local company applications. Examples follow the same company-folder structure.
+CI compiles the example, all CV variants and ready company applications that have
+been approved for versioning, including Sizeless, and uploads the PDFs as workflow
+artifacts. It does not receive ignored local applications. Examples follow the
+same company-folder structure.
 
 Legacy flat `applications/company-slug.json` files are rejected explicitly rather
 than silently skipped. Move them into a company folder and complete the position

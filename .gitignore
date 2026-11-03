@@ -1,8 +1,10 @@
 build/
 tmp/
 output/
-cover-letters/applications/
-dist/cover-letters/
+cover-letters/applications/*
+!cover-letters/applications/sizeless/
+dist/cover-letters/*
+!dist/cover-letters/sizeless/
 .DS_Store
 *.aux
 *.fdb_latexmk

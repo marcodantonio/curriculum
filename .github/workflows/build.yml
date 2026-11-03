@@ -21,8 +21,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y latexmk texlive-luatex texlive-latex-extra texlive-lang-european fonts-liberation fonts-texgyre
 
-      - name: Build all themes and languages
-        run: ./scripts/build.sh all
+      - name: Build all CV variants and published company letters
+        run: make all
 
       - name: Compile bilingual single-column cover letter example
         run: python3 scripts/cover-letter.py --applications-dir cover-letters/examples build example
@@ -33,4 +33,4 @@ jobs:
           name: cv-pdfs
           path: |
             dist/**/cv-*.pdf
-            dist/cover-letters/example/cover-letter-*.pdf
+            dist/cover-letters/*/cover-letter-*.pdf

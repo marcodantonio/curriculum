@@ -1,0 +1,68 @@
+{
+  "company": "sizeless",
+  "ready": true,
+  "languages": {
+    "it": {
+      "recipient": "Julius Schilling · Hiring Team",
+      "salutation": "Gentile Julius Schilling,",
+      "motivation": "Mi interessa il passaggio che state costruendo tra acquisizione sul campo e documentazione utilizzabile: trasformare un video da smartphone in un modello 3D e in risultati integrati nei flussi CAD e GIS. È un problema in cui computer vision, applicazioni e infrastruttura devono funzionare insieme, ed è proprio questo collegamento che mi piace sviluppare.",
+      "paragraphs": [
+        "In Aptar ho lavorato a un proof of concept di computer vision per il marketing: ho automatizzato la generazione di dataset sintetici con Python e Blender, addestrato un modello YOLO e sviluppato applicazioni per web, mobile e Apple Vision Pro, utilizzabili online e offline. Anche la mia tesi di laurea ha riguardato computer vision e mixed reality per la prototipazione di prodotti con Apple Vision Pro. Questa esperienza mi ha portato a seguire il percorso dai dati al modello fino all'applicazione che ne rende fruibile il risultato.",
+        "Oggi in Netsons sviluppo servizi web in PHP e JavaScript, collaboro con il reparto sistemi sull'integrazione tra applicazioni e infrastruttura e automatizzo i rilasci con CI/CD e Docker. Uso Codex e Claude Code, studiando capacità e limiti dei modelli per scegliere contesto e modalità di lavoro in funzione del compito.",
+        "Nei progetti personali estendo Hermes con moduli Python per agenti specializzati, memoria e automazione di attività. Integro voce e telefonia con LiveKit/SIP e strumenti tramite MCP, curando autorizzazioni e gestione persistente delle richieste. Progettare questi collegamenti e gestirne l'infrastruttura mi ha insegnato a ragionare anche su stato, errori e recupero, oltre che sul singolo componente.",
+        "Sto frequentando la magistrale in Ingegneria Informatica al Politecnico di Torino, nel track Computing and Network Infrastructures. La danza sportiva internazionale, con 17 titoli italiani, ha rafforzato la mia capacità di lavorare con costanza, gestire la pressione e usare il feedback per migliorare."
+      ],
+      "closing": "Mi farebbe piacere raccontarvi questi progetti e confrontarmi su dove il mio contributo potrebbe essere più utile nello sviluppo di SiteScan e della vostra piattaforma. Grazie per il tempo dedicato alla mia candidatura.",
+      "contribution": "Posso contribuire a collegare acquisizione, backend e workspace, sviluppando funzionalità e strumenti interni e curando il passaggio dei dati tra componenti. Porto esperienza pratica nella computer vision e nell’integrazione tra applicazioni e infrastruttura: una combinazione utile per trasformare le capacità dei modelli in un prodotto utilizzabile."
+    },
+    "en": {
+      "recipient": "Julius Schilling · Hiring Team",
+      "salutation": "Dear Julius Schilling,",
+      "motivation": "What interests me about sizeless is the connection between field capture and usable documentation: turning smartphone recordings into 3D models and results that fit CAD and GIS workflows. That requires computer vision, applications and infrastructure to work together, and building those connections is what I enjoy.",
+      "paragraphs": [
+        "At Aptar, I worked on a computer vision proof of concept for the marketing team. I automated synthetic dataset generation with Python and Blender, trained a YOLO model, and developed applications for web, mobile and Apple Vision Pro that worked online and offline. My bachelor's thesis also focused on computer vision and mixed reality for product prototyping with Apple Vision Pro. This gave me experience across the path from data and model development to the application that makes the result useful.",
+        "At Netsons, I develop PHP and JavaScript web services, work with the systems team on application and infrastructure integration, and automate releases with CI/CD and Docker. I use Codex and Claude Code, studying model capabilities and limitations to choose the context and workflow suited to each task.",
+        "In personal projects, I extend Hermes with Python modules for specialist agents, memory and task automation. I integrate voice and telephony through LiveKit/SIP and tools through MCP, with authorization controls and persistent request handling. Building these integrations and managing their infrastructure has taught me to consider state, failures and recovery alongside individual components.",
+        "I am pursuing a master's degree in Computer Engineering at Politecnico di Torino, on the Computing and Network Infrastructures track. Competing internationally in dance, with 17 Italian titles, has strengthened my ability to work consistently, handle pressure and use feedback to improve."
+      ],
+      "closing": "I would welcome the chance to walk you through these projects and discuss where I could contribute to SiteScan and your platform. Thank you for considering my application.",
+      "contribution": "I would contribute across capture, backend and workspace features, building integrations and internal tools with attention to how data moves between components. I bring hands-on computer vision experience alongside application and infrastructure development: a combination that can help turn model capabilities into a usable product."
+    }
+  },
+  "position": {
+    "title": "Software Engineer",
+    "url": "https://join.com/companies/sizelessco/16870217-software-engineer",
+    "location": "Zürich, Switzerland - onsite",
+    "requirements": [
+      "Build the capture app and results workspace across web, mobile and backend.",
+      "Keep processing reliable for long-running jobs, large files and 3D data.",
+      "Build internal tools used by the team.",
+      "Strong fundamentals in TypeScript, Python or a comparable language.",
+      "Move comfortably between product code and infrastructure.",
+      "Use AI-assisted development effectively and take ownership of problems.",
+      "Full working proficiency in English; German is optional."
+    ],
+    "fit": [
+      {
+        "requirement": "Build the capture app and results workspace across web, mobile and backend.",
+        "evidence": "Aptar: synthetic Blender datasets, YOLO training, web/mobile/Apple Vision Pro PoC, online and offline.",
+        "contribution": "Connect data/model development with usable application features and capture workflows."
+      },
+      {
+        "requirement": "Move comfortably between product code and infrastructure.",
+        "evidence": "Netsons: PHP/JavaScript web services, systems-team collaboration, CI/CD and Docker.",
+        "contribution": "Build backend integrations and delivery workflows that connect product and infrastructure."
+      },
+      {
+        "requirement": "Build internal tools used by the team.",
+        "evidence": "Hermes: Python extensions, MCP integrations, authorization and persistent request handling.",
+        "contribution": "Build internal tools with explicit state, authorization and failure handling."
+      },
+      {
+        "requirement": "Use AI-assisted development effectively and take ownership of problems.",
+        "evidence": "Daily development with Codex and Claude Code; study of model limits and suitable contexts.",
+        "contribution": "Use AI-assisted workflows with engineering judgement and ownership."
+      }
+    ]
+  }
+}
